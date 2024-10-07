@@ -127,14 +127,14 @@ with st.sidebar:
     st.subheader(":red[App evaluates customer purchase data from websites after alterations.]") 
     
     uploaded_file_A = st.file_uploader("1. Choose a CSV file with the A-Observations.", type="csv")
-    uploaded_file_A ="data/campaign_data_A.csv"
+    uploaded_file_A ="Data/campaign_data_A.csv"
     if uploaded_file_A:
         dfA = pd.read_csv(uploaded_file_A, header=0, delimiter=';')        
         countA = dfA['Engagement'].value_counts().get(1,0) 
         st.write(f"Customer Purchased / A-Campaign: :red[{calculate_percentage(dfA, countA)} %]")   
     
     uploaded_file_B = st.file_uploader("2. Choose a CSV file with the B-Observations.", type="csv")
-    uploaded_file_B ="data/campaign_data_B.csv"
+    uploaded_file_B ="Data/campaign_data_B.csv"
     if uploaded_file_B:               
         dfB = pd.read_csv(uploaded_file_B, header=0, delimiter=';')
         countB = dfB['Engagement'].value_counts().get(1,0) 
